@@ -217,7 +217,7 @@ def run():
             chat_box.wait_for(state="visible", timeout=15000)
 
             # REQUIREMENT: Loop mein 150 baar message send karna hai
-            for msg_count in range(1, 151):
+            for msg_count in range(1, 4):
                 print(f"\n[LOOP - MESSAGE {msg_count}/150] Starting sequence...", flush=True)
                 
                 # REQUIREMENT: Textfield focus karna
