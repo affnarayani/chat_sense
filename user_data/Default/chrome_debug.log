@@ -1,0 +1,13 @@
+[0605/164559.904:INFO:CONSOLE:2] "JQMIGRATE: Migrate is installed, version 3.4.1", source: https://www.allindiachat.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1 (2)
+[0605/164601.381:INFO:CONSOLE:29] "adgb - not initialized.", source: https://cdn.taboola.com/libtrc/kisschat-allindiachat/loader.js (29)
+[0605/164603.511:INFO:CONSOLE:29] "Placements With no Content: Below Article Thumbnails | Lazy Injected 1", source: https://cdn.taboola.com/libtrc/kisschat-allindiachat/loader.js (29)
+[0605/164603.513:INFO:CONSOLE:29] "Placements With no Content: Below Article Thumbnails | Lazy Injected 1", source: https://cdn.taboola.com/libtrc/kisschat-allindiachat/loader.js (29)
+[0605/164610.607:ERROR:content\public\browser\web_contents_delegate.cc:309] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0605/164610.607:ERROR:content\public\browser\web_contents_delegate.cc:309] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0605/164610.608:ERROR:content\public\browser\web_contents_delegate.cc:309] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0605/164610.608:ERROR:content\public\browser\web_contents_delegate.cc:309] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0605/164610.608:ERROR:content\public\browser\web_contents_delegate.cc:309] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0605/164610.608:ERROR:content\public\browser\web_contents_delegate.cc:309] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0605/164611.890:INFO:CONSOLE:29] "Placements With no Content: Below Article Thumbnails | Card 5", source: https://cdn.taboola.com/libtrc/kisschat-allindiachat/loader.js (29)
+[0605/164611.892:INFO:CONSOLE:29] "Placements With no Content: Below Article Thumbnails | Card 5", source: https://cdn.taboola.com/libtrc/kisschat-allindiachat/loader.js (29)
+[0605/164623.883:INFO:CONSOLE:0] "Uncaught (in promise) #<Object>", source: https://www.allindiachat.com/delhi-chat/ (0)
