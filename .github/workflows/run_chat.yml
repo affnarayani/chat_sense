@@ -1,64 +1,57 @@
 name: Chat Sense Automation
 
 on:
-  # Isse aap GitHub UI se manually jab chahein run kar sakte hain
   workflow_dispatch:
-  # Agar aap chahte hain ki yeh har kuch ghante mein automatic chale, toh cron uncomment karein:
-  # schedule:
-  #   - cron: '0 */6 * * *' # Har 6 ghante mein chalega
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
 
 jobs:
-  run-bot:
+  run-chat-bot:
     runs-on: ubuntu-latest
 
-    permissions:
-      # Wapas repository mein user_data push karne ke liye write permission zaroori hai
-      contents: write
-
     steps:
-    # 1. Repository ka code runner par lana
-    - name: Checkout Repository
-      uses: actions/checkout@v5
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
 
-    # 2. Python environment setup karna
-    - name: Set up Python
-      uses: actions/checkout@v6
-      with:
-        python-version: '3.11'
-        cache: 'pip'
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
 
-    # 3. Persistence Step A: Purane user_data ko cache se restore karna
-    - name: Restore User Data Cache
-      uses: actions/cache@v4
-      with:
-        path: ./user_data
-        key: user-data-${{ github.run_id }}
-        restore-keys: |
-          user-data-
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright playwright-stealth
 
-    # 4. Dependencies install karna aur Playwright setting up
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install playwright playwright-stealth
-        playwright install chromium
+      - name: Install Playwright and System Dependencies
+        run: |
+          python -m playwright install --with-deps chromium
 
-    # 5. GUI apps handle karne ke liye Virtual Display (Xvfb) setup karna (Kyunki headless=False hai)
-    - name: Run Script with Virtual Framebuffer
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y xvfb
-        xvfb-run --server-args="-screen 0 1280x1024x24" python chat_sense.py
+      - name: Run Chat Sense Script with Virtual Display
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          xvfb-run --server-args="-screen 0 1280x1024x24" python chat_sense.py
 
-    # 6. Persistence Step B: Agar user_data mein koi cookies ya session updates aaye hain, toh use wapas Git par save karna
-    - name: Commit and Push Updated User Data
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        
-        # Check agar user_data folder exist karta hai aur usme changes hain
-        if [ -d "./user_data" ]; then
-          git add user_data/
-          git commit -m "Automated update: user_data session persistence [skip ci]" || echo "No changes to commit"
-          git push origin main || echo "Push failed or no changes"
-        fi
+      - name: Commit and Push Updated User Data
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git pull origin main
+          
+          git add -A
+          
+          if git diff --staged --quiet; then
+            echo "No new changes or user_data updates to commit."
+          else
+            git commit -m "chore: automated chat session updates and user_data persistence [skip ci]"
+            git push origin main
+          fi
