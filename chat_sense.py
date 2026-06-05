@@ -217,7 +217,7 @@ def run():
             chat_box.wait_for(state="visible", timeout=15000)
 
             # REQUIREMENT: Loop mein 150 baar message send karna hai
-            for msg_count in range(1, 4):
+            for msg_count in range(1, 151):
                 print(f"\n[LOOP - MESSAGE {msg_count}/150] Starting sequence...", flush=True)
                 
                 # REQUIREMENT: Textfield focus karna
@@ -262,12 +262,14 @@ def run():
 
         except Exception as loc_err:
             print(f"[ERROR] Chat manipulation or elements action failed: {loc_err}", flush=True)
+            sys.exit(1)
 
         print("[STEP] Script wrapping up final delay sequence...", flush=True)
         custom_random_wait(5, 10)
 
     except Exception as e:
         print("[ERROR]", e, flush=True)
+        sys.exit(1)
 
     finally:
         print("[STEP] Closing browser and exiting...", flush=True)
