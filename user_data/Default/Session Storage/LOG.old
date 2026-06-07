@@ -1,3 +1,7 @@
-2026/06/06-18:52:28.679 d9a Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Session Storage/MANIFEST-000001
-2026/06/06-18:52:28.680 d9a Recovering log #3
-2026/06/06-18:52:28.680 d9a Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Session Storage/000003.log 
+2026/06/06-22:35:22.239 d49 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Session Storage/MANIFEST-000001
+2026/06/06-22:35:22.240 d49 Recovering log #3
+2026/06/06-22:35:22.240 d49 Level-0 table #3: started
+2026/06/06-22:35:22.241 d49 Level-0 table #3: 9922 bytes OK
+2026/06/06-22:35:22.241 d49 Recovering log #4
+2026/06/06-22:35:22.242 d49 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Session Storage/000004.log 
+2026/06/06-22:35:22.242 d49 Delete type=0 #3
