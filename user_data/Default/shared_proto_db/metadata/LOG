@@ -1,3 +1,3 @@
-2026/07/14-22:31:10.717 db2 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/MANIFEST-000001
-2026/07/14-22:31:10.718 db2 Recovering log #3
-2026/07/14-22:31:10.718 db2 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/000003.log 
+2026/07/15-03:59:07.276 cdc Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/MANIFEST-000001
+2026/07/15-03:59:07.279 cdc Recovering log #3
+2026/07/15-03:59:07.280 cdc Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/000003.log 
