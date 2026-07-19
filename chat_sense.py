@@ -8,6 +8,7 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 from playwright_stealth import Stealth
+import requests
 
 # =========================
 # CONFIG
@@ -262,6 +263,32 @@ def run():
 
         except Exception as loc_err:
             print(f"[ERROR] Chat manipulation or elements action failed: {loc_err}", flush=True)
+            if 'main_page' in locals() and main_page:
+                try:
+                    screenshot_path = "error_screenshot.png"
+                    main_page.screenshot(path=screenshot_path, full_page=True)
+                    print(f"[OK] Error screenshot captured: {screenshot_path}", flush=True)
+                    
+                    imgbb_key = os.getenv("IMGBBB_API_KEY")
+                    if imgbb_key:
+                        print("[OK] Uploading screenshot to ImgBB...", flush=True)
+                        url = f"https://api.imgbb.com/1/upload?expiration=86400&key={imgbb_key}"
+                        
+                        with open(screenshot_path, "rb") as file:
+                            response = requests.post(url, files={"image": file})
+                        
+                        if response.status_code == 200:
+                            res_data = response.json()
+                            direct_url = res_data["data"]["display_url"]
+                            print("\n" + "="*50, flush=True)
+                            print(f"👉 DIRECT SCREENSHOT LINK: {direct_url}", flush=True)
+                            print("="*50 + "\n", flush=True)
+                        else:
+                            print(f"[WARNING] ImgBB Upload Failed Status: {response.status_code}", flush=True)
+                    else:
+                        print("[WARNING] IMGBBB_API_KEY environment variable not found.", flush=True)
+                except Exception as screenshot_err:
+                    print(f"[WARNING] Could not capture or upload screenshot: {screenshot_err}", flush=True)
             sys.exit(1)
 
         print("[STEP] Script wrapping up final delay sequence...", flush=True)
@@ -269,6 +296,32 @@ def run():
 
     except Exception as e:
         print("[ERROR]", e, flush=True)
+        if 'main_page' in locals() and main_page:
+            try:
+                screenshot_path = "error_screenshot.png"
+                main_page.screenshot(path=screenshot_path, full_page=True)
+                print(f"[OK] Error screenshot captured: {screenshot_path}", flush=True)
+                
+                imgbb_key = os.getenv("IMGBBB_API_KEY")
+                if imgbb_key:
+                    print("[OK] Uploading screenshot to ImgBB...", flush=True)
+                    url = f"https://api.imgbb.com/1/upload?expiration=86400&key={imgbb_key}"
+                    
+                    with open(screenshot_path, "rb") as file:
+                        response = requests.post(url, files={"image": file})
+                    
+                    if response.status_code == 200:
+                        res_data = response.json()
+                        direct_url = res_data["data"]["display_url"]
+                        print("\n" + "="*50, flush=True)
+                        print(f"👉 DIRECT SCREENSHOT LINK: {direct_url}", flush=True)
+                        print("="*50 + "\n", flush=True)
+                    else:
+                        print(f"[WARNING] ImgBB Upload Failed Status: {response.status_code}", flush=True)
+                else:
+                    print("[WARNING] IMGBBB_API_KEY environment variable not found.", flush=True)
+            except Exception as screenshot_err:
+                print(f"[WARNING] Could not capture or upload screenshot: {screenshot_err}", flush=True)
         sys.exit(1)
 
     finally:

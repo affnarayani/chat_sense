@@ -5,6 +5,7 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  IMGBBB_API_KEY: ${{ secrets.IMGBBB_API_KEY }}
 
 permissions:
   contents: write
@@ -28,7 +29,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install playwright playwright-stealth
+          pip install playwright playwright-stealth requests
 
       - name: Install Playwright and System Dependencies
         run: |
