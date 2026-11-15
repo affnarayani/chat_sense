@@ -1,0 +1,1 @@
+"""Shared helpers for the Chat Sense automation project."""

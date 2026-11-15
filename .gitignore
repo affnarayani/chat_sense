@@ -1,0 +1,6 @@
+.venv/
+.env
+extracted_extension/
+error/
+__pycache__/
+*.pyc

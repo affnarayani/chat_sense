@@ -1,0 +1,50 @@
+# ============================================================
+# AllIndiaChat Locators
+# ------------------------------------------------------------
+# Every locator used by chat_sense.py lives in this file.
+# Format for each line:   <name> = <playwright expression>
+#
+#   * The Python code references a locator by its <name> only.
+#   * To change a locator, edit the expression on its line here.
+#   * Lines starting with '#' are comments. Blank lines are ignored.
+#
+# PRIMARY + FALLBACKS (same name):
+#   Write the primary locator first, then one or more fallback lines that
+#   repeat the SAME name. Resolution order is: primary -> fallbacks -> vision.
+#   Candidates are checked in parallel (round-robin, short slices); the first
+#   one that becomes ready is used, without waiting for a full timeout.
+#
+#   Example:
+#     chatgpt_textbox = page.get_by_role('textbox', name='Chat with ChatGPT').or_(page.get_by_role('textbox', name='Ask ChatGPT'))
+#     chatgpt_textbox = page.locator('div[contenteditable="true"]').filter(has=page.locator('p', has_text='Ask anything')).first
+#     chatgpt_textbox = page.locator('#prompt-textarea')
+#
+# Available context objects when evaluating an expression:
+#   page / main_page  -> the main browser page
+#   frame             -> the chat iframe FrameLocator (after login)
+# ============================================================
+
+
+# --- Chat iframe that hosts the Kiwi IRC widget (advanced_iframe) ---
+advanced_iframe_locator = main_page.locator('iframe[name="advanced_iframe"]')
+advanced_iframe_frame = main_page.frame_locator('iframe[name="advanced_iframe"]')
+
+
+# --- Login username input field inside the iframe (id starts with "inp_") ---
+username_input_field = frame.locator('input[id^="inp_"]').first
+
+
+# --- Submit / login button inside the iframe ---
+submit_button = frame.locator('button[type="submit"], input[type="submit"], button.login_button, input.login_button').first
+
+
+# --- Adjustment (settings) icon inside the iframe ---
+adjust_icon = frame.locator('i.fa.fa-adjust, i[class*="fa-adjust"]').first
+
+
+# --- Colour picker box (Light Red) via full hierarchy CSS path ---
+color_box = frame.locator('body > div.kiwi-wrap.kiwi-theme-bg > div.kiwi-workspace > div.kiwi-controlinput.kiwi-theme-bg.kiwi-controlinput--show-send.kiwi-controlinput--show-tools.kiwi-controlinput--show-tools--inline > div.kiwi-controlinput-active-tool > div > div > div.kiwi-inputtools-colours-colour.irc-bg-colour-light-red').first
+
+
+# --- Chat message editor textbox (Kiwi IRC contenteditable) ---
+chat_box = frame.locator('div.kiwi-ircinput-editor[role="textbox"]').first

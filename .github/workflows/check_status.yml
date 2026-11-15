@@ -1,0 +1,58 @@
+name: Check Status and Trigger Chat
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  actions: write
+
+jobs:
+  check-and-trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Active Runs and Trigger Workflow
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const targetWorkflowFilename = 'run_chat.yml';
+
+            console.log(`Checking running statuses for ${targetWorkflowFilename}...`);
+
+            const runs = await github.rest.actions.listWorkflowRuns({
+              owner: owner,
+              repo: repo,
+              workflow_id: targetWorkflowFilename,
+              status: 'in_progress'
+            });
+
+            const queuedRuns = await github.rest.actions.listWorkflowRuns({
+              owner: owner,
+              repo: repo,
+              workflow_id: targetWorkflowFilename,
+              status: 'queued'
+            });
+
+            const totalActiveRuns = runs.data.workflow_runs.length + queuedRuns.data.workflow_runs.length;
+
+            if (totalActiveRuns > 0) {
+              console.log(`[STATUS] An active job is already running or queued (${totalActiveRuns} active run(s)). Doing nothing.`);
+            } else {
+              console.log(`[STATUS] No active jobs found. Triggering ${targetWorkflowFilename} now...`);
+              
+              await github.rest.actions.createWorkflowDispatch({
+                owner: owner,
+                repo: repo,
+                workflow_id: targetWorkflowFilename,
+                ref: 'main'
+              });
+              
+              console.log('[SUCCESS] Workflow successfully triggered!');
+            }
