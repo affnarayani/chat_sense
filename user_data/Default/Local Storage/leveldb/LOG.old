@@ -1,3 +1,3 @@
-2026/11/15-19:53:58.950 be7 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/MANIFEST-000001
-2026/11/15-19:53:58.950 be7 Recovering log #16
-2026/11/15-19:53:58.953 be7 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/000016.log 
+2026/11/15-23:39:30.903 b64 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/MANIFEST-000001
+2026/11/15-23:39:30.903 b64 Recovering log #16
+2026/11/15-23:39:30.903 b64 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/000016.log 
