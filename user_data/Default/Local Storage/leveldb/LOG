@@ -1,3 +1,15 @@
-2026/11/17-03:30:20.828 b26 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/MANIFEST-000001
-2026/11/17-03:30:20.828 b26 Recovering log #16
-2026/11/17-03:30:20.829 b26 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/000016.log 
+2026/11/17-12:19:37.669 bed Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/MANIFEST-000001
+2026/11/17-12:19:37.669 bed Recovering log #16
+2026/11/17-12:19:37.670 bed Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/000016.log 
+2026/11/17-12:20:37.672 bf9 Level-0 table #20: started
+2026/11/17-12:20:37.673 bf9 Level-0 table #20: 11292 bytes OK
+2026/11/17-12:20:37.673 bf9 Delete type=0 #16
+2026/11/17-12:20:37.673 bf9 Compacting 4@0 + 1@1 files
+2026/11/17-12:20:37.674 bf9 Generated table #21@0: 20 keys, 1724 bytes
+2026/11/17-12:20:37.674 bf9 Compacted 4@0 + 1@1 files => 1724 bytes
+2026/11/17-12:20:37.675 bf9 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/11/17-12:20:37.675 bf9 Delete type=2 #11
+2026/11/17-12:20:37.675 bf9 Delete type=2 #20
+2026/11/17-12:20:37.675 bf9 Delete type=2 #14
+2026/11/17-12:20:37.675 bf9 Delete type=2 #8
+2026/11/17-12:20:37.675 bf9 Delete type=2 #17
