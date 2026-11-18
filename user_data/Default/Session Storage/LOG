@@ -1,3 +1,13 @@
-2026/11/17-12:19:37.933 bed Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Session Storage/MANIFEST-000001
-2026/11/17-12:19:37.933 bed Recovering log #10
-2026/11/17-12:19:37.933 bed Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Session Storage/000010.log 
+2026/11/17-21:09:57.149 b0f Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Session Storage/MANIFEST-000001
+2026/11/17-21:09:57.149 b0f Recovering log #10
+2026/11/17-21:09:57.150 b0f Level-0 table #12: started
+2026/11/17-21:09:57.211 b0f Level-0 table #12: 9181 bytes OK
+2026/11/17-21:09:57.230 b0f Delete type=0 #10
+2026/11/17-21:09:57.231 b16 Compacting 4@0 + 0@1 files
+2026/11/17-21:09:57.310 b16 Generated table #14@0: 2 keys, 145 bytes
+2026/11/17-21:09:57.310 b16 Compacted 4@0 + 0@1 files => 145 bytes
+2026/11/17-21:09:57.350 b16 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/11/17-21:09:57.352 b16 Delete type=2 #3
+2026/11/17-21:09:57.352 b16 Delete type=2 #9
+2026/11/17-21:09:57.352 b16 Delete type=2 #12
+2026/11/17-21:09:57.352 b16 Delete type=2 #7
