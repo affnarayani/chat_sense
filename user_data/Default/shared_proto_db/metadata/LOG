@@ -1,3 +1,3 @@
-2026/11/24-02:27:14.251 be6 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/MANIFEST-000001
-2026/11/24-02:27:14.252 be6 Recovering log #3
-2026/11/24-02:27:14.252 be6 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/000003.log 
+2026/11/24-12:46:34.927 be2 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/MANIFEST-000001
+2026/11/24-12:46:34.927 be2 Recovering log #3
+2026/11/24-12:46:34.927 be2 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/shared_proto_db/metadata/000003.log 
