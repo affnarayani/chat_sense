@@ -1,3 +1,6 @@
-2026/11/25-13:51:37.996 bf3 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/MANIFEST-000001
-2026/11/25-13:51:37.996 bf3 Recovering log #23
-2026/11/25-13:51:37.996 bf3 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/000023.log 
+2026/11/25-23:47:53.063 bb0 Reusing MANIFEST /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/MANIFEST-000001
+2026/11/25-23:47:53.063 bb0 Recovering log #23
+2026/11/25-23:47:53.063 bb0 Reusing old log /home/runner/work/chat_sense/chat_sense/user_data/Default/Local Storage/leveldb/000023.log 
+2026/11/25-23:48:53.065 bb9 Level-0 table #27: started
+2026/11/25-23:48:53.066 bb9 Level-0 table #27: 11277 bytes OK
+2026/11/25-23:48:53.066 bb9 Delete type=0 #23
